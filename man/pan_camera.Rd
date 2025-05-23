@@ -20,8 +20,8 @@ plotly object
 The default position for plotly
 mesh plots are not satisfying for
 brain plots. This convenience function
-can pan the camera to lateral or medial
-view, or to custom made views if you are
+can pan the camera to lateral, medial, ventral,
+dorsal view, or to custom made views if you are
 plotly savvy.
 }
 \examples{

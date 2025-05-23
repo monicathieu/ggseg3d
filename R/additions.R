@@ -62,8 +62,8 @@ add_glassbrain <- function(p,
 #' The default position for plotly
 #' mesh plots are not satisfying for
 #' brain plots. This convenience function
-#' can pan the camera to lateral or medial
-#' view, or to custom made views if you are
+#' can pan the camera to lateral, medial, ventral,
+#' dorsal view, or to custom made views if you are
 #' plotly savvy.
 #'
 #' @param p plotly object
@@ -82,13 +82,21 @@ pan_camera <- function(p, camera, aspectratio = 1){
   stopifnot(is.character(camera)|is.list(camera))
 
   views = if(class(camera) != "list"){
-    camera <- match.arg(camera, c("left lateral", "left medial",
-                                  "right lateral", "right medial"))
+    camera <- match.arg(camera, c("left lateral", "left medial", "left ventral", "left dorsal",
+                                  "right lateral", "right medial", "right ventral", "right dorsal"))
     switch(camera,
            "left lateral" = list(eye = list(x = -2.5, y = 0, z = 0)),
            "left medial" = list(eye = list(x = 2, y = 0, z = 0)),
+           "left ventral" = list(eye = list(x = 0, y = 0, z = -2.5),
+                                 up = list(x = 0, y = 1, z = 0)),
+           "left dorsal" = list(eye = list(x = 0, y = 0, z = 2.5),
+                                up = list(x = 0, y = 1, z = 0)),
            "right lateral" = list(eye = list(x = 2, y = 0, z = 0)),
-           "right medial" = list(eye = list(x = -2.5, y = 0, z = 0))
+           "right medial" = list(eye = list(x = -2.5, y = 0, z = 0)),
+           "right ventral" = list(eye = list(x = 0, y = 0, z = -2.5),
+                                  up = list(x = 0, y = 1, z = 0)),
+           "right dorsal" = list(eye = list(x = 0, y = 0, z = 2.5),
+                                 up = list(x = 0, y = 1, z = 0))
     )
   }else{
     camera

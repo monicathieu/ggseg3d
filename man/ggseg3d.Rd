@@ -2,8 +2,8 @@
 % Please edit documentation in R/ggseg3d-package.R, R/ggseg3d.R
 \docType{package}
 \name{ggseg3d}
-\alias{ggseg3d}
 \alias{ggseg3d-package}
+\alias{ggseg3d}
 \title{ggseg3d: Plot brain segmentations with plotly}
 \usage{
 ggseg3d(
