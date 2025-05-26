@@ -17,6 +17,26 @@ test_that("pan_camera works", {
                list(eye = list(x = -2.5, y = 0, z = 0))
   )
 
+  p <- ggseg3d() %>%
+    pan_camera("right dors")
+
+  expect_true("layoutAttrs" %in% names(p$x))
+
+  expect_equal(p$x$layoutAttrs[[1]]$scene$camera ,
+               list(eye = list(x = 0, y = 0, z = 2.5),
+                    up = list(x = 0, y = 1, z = 0))
+  )
+
+  p <- ggseg3d() %>%
+    pan_camera("right vent")
+
+  expect_true("layoutAttrs" %in% names(p$x))
+
+  expect_equal(p$x$layoutAttrs[[1]]$scene$camera ,
+               list(eye = list(x = 0, y = 0, z = -2.5),
+                    up = list(x = 0, y = 1, z = 0))
+  )
+
 
   p <- ggseg3d() %>%
     pan_camera("left lat")
@@ -34,6 +54,26 @@ test_that("pan_camera works", {
 
   expect_equal(p$x$layoutAttrs[[1]]$scene$camera ,
                list(eye = list(x = 2, y = 0, z = 0))
+  )
+
+  p <- ggseg3d() %>%
+    pan_camera("left dors")
+
+  expect_true("layoutAttrs" %in% names(p$x))
+
+  expect_equal(p$x$layoutAttrs[[1]]$scene$camera ,
+               list(eye = list(x = 0, y = 0, z = 2.5),
+                    up = list(x = 0, y = 1, z = 0))
+  )
+
+  p <- ggseg3d() %>%
+    pan_camera("left vent")
+
+  expect_true("layoutAttrs" %in% names(p$x))
+
+  expect_equal(p$x$layoutAttrs[[1]]$scene$camera ,
+               list(eye = list(x = 0, y = 0, z = -2.5),
+                    up = list(x = 0, y = 1, z = 0))
   )
 
   p <- ggseg3d() %>%
