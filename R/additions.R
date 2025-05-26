@@ -81,7 +81,7 @@ pan_camera <- function(p, camera, aspectratio = 1){
 
   stopifnot(is.character(camera)|is.list(camera))
 
-  views = if(class(camera) != "list"){
+  views = if(!inherits(camera, "list")){
     camera <- match.arg(camera, c("left lateral", "left medial", "left ventral", "left dorsal",
                                   "right lateral", "right medial", "right ventral", "right dorsal"))
     switch(camera,
