@@ -1,14 +1,14 @@
 Package: ggseg3d
 Title: Tri-Surface Mesh Plots for Brain Atlases
-Version: 1.6.3
-Authors@R: c(person("Athanasia Mo", "Mowinckel", 
-                    email = "a.m.mowinckel@psykologi.uio.no", 
-                    role = c("aut", "cre"),
-                    comment = c(ORCID = "0000-0002-5756-0223")),
-            person("Didac", "Vidal-Piñeiro", 
-                    email = "d.v.pineiro@psykologi.uio.no", 
-                    role = c("aut"),
-                    comment = c(ORCID = "0000-0001-9997-9156")))
+Version: 1.6.4
+Authors@R: c(
+    person("Athanasia Mo", "Mowinckel", , "a.m.mowinckel@psykologi.uio.no", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-5756-0223")),
+    person("Didac", "Vidal-Piñeiro", , "d.v.pineiro@psykologi.uio.no", role = "aut",
+           comment = c(ORCID = "0000-0001-9997-9156")),
+    person("Monica", "Thieu", , "mthieu@emory.edu", role = "ctb",
+           comment = c(ORCID = "0000-0002-6376-0467"))
+  )
 Description: Mainly contains a plotting function ggseg3d(), 
     and data of two standard brain atlases (Desikan-Killiany and aseg). 
     By far, the largest bit of the package is the data for each of the atlases.
